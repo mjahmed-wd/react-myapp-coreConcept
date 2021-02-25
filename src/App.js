@@ -8,7 +8,7 @@ import TodoList from "./components/TodoList";
 function App() {
   //state stuff
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos"))||[]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
   //functions
@@ -40,23 +40,23 @@ function App() {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify([]));
     } else {
-      console.log("hit")
+      // console.log("hit")
 
       localStorage.setItem("todos", JSON.stringify(todos));
-    //  let todoLocal= JSON.parse(localStorage.getItem("todos"))
+    //  let todoLocal= JSON.parse(localStorage.getItem("todos")) 
     //  setTodos(todoLocal);
      
 
-    // console.log(JSON.parse(localStorage.getItem("todos"))===todos);
+    // console.log(.parse(localStorage.getItem("todos"))===todos);
     // console.log("todos",todos);
-    let ami=localStorage.getItem("todos");
-    console.log("local",typeof JSON.parse(ami));
+    // let ami=localStorage.getItem("todos");
+    // console.log("local",typeof JSON.parse(ami));
     }
   };
   return (
     <div className="App">
       <header>
-        <h1>Ed's Todo List</h1>
+        <h1>Jubair's Todo List</h1>
       </header>
       <Form
         todos={todos}
